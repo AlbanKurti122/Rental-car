@@ -1,5 +1,6 @@
 package com.sda.entity;
 
+import com.sda.static_data.StatusCar;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,7 +17,8 @@ public class Car {
     private Integer year;
     private String colour;
     private Integer mileage;
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private StatusCar status;
     private Double amountPerDay;
     @ManyToOne
     @JoinColumn(name = "branch_id")

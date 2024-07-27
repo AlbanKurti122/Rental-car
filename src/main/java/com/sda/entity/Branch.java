@@ -14,7 +14,7 @@ public class Branch {
     private Long id;
     private String address;
     private String city;
-    private Boolean active;
+    private Boolean active = true;
     @ManyToOne
     @JoinColumn(name = "rental_id")
     private Rental rental;
