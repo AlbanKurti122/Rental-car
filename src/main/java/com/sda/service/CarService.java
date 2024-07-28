@@ -11,4 +11,6 @@ public interface CarService {
     Car bookCar(Long id);
 
     List<Car> findAllAvailable();
+
+    List<Car> getAvailableCarInBranch(Long branchId);
 }

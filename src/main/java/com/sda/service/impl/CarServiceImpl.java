@@ -45,4 +45,8 @@ public class CarServiceImpl implements CarService {
     public List<Car> findAllAvailable(){
         return carRepository.findAllByStatus(StatusCar.AVAILABLE);
     }
+    @Override
+    public List<Car> getAvailableCarInBranch(Long branchId){
+       return carRepository.findByStatusInBranch(branchId, StatusCar.AVAILABLE);
+    }
 }

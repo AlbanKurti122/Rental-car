@@ -18,6 +18,7 @@ public class BranchServiceImpl implements BranchService {
     @Autowired
     private RentalRepository rentalRepository;
     private List<Branch> branches;
+    
 
     @Override
     public Branch createBranch(Long rentalId, Branch branch) {
@@ -27,7 +28,6 @@ public class BranchServiceImpl implements BranchService {
         branch.setRental(rental);
         return branchRepository.save(branch);
     }
-
     @Override
     public void deleteBranch(Long id) {
         Branch branch = branchRepository.findById(id)

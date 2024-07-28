@@ -26,4 +26,8 @@ public class CarController {
     public List<Car> availableCar(){
         return carService.findAllAvailable();
     }
+    @GetMapping("/car/getAvailableCar")
+    public List<Car> getAvailableCar(@RequestParam Long branchId){
+        return carService.getAvailableCarInBranch(branchId);
+    }
 }
