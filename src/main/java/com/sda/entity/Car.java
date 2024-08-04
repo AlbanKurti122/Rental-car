@@ -1,8 +1,11 @@
 package com.sda.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sda.static_data.StatusCar;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Table(name = "cars")
@@ -23,5 +26,7 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "branch_id")
     private Branch branch;
-
+    @OneToMany(mappedBy = "car")
+    @JsonIgnore
+    private List<Reservation> reservations;
 }
