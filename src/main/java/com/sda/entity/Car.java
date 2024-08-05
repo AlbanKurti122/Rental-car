@@ -29,4 +29,5 @@ public class Car {
     @OneToMany(mappedBy = "car")
     @JsonIgnore
     private List<Reservation> reservations;
+    private String image;
 }

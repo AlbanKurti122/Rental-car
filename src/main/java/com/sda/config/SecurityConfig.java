@@ -24,7 +24,7 @@ public class SecurityConfig implements WebMvcConfigurer {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.authenticationManager(authenticationManager(http));
         http.authorizeHttpRequests(request ->{
-            request.requestMatchers( "/user/*" , "/v3/api-docs/**" , "/swagger-ui/**")
+            request.requestMatchers( "/user/*" ,"/carAvailable", "/v3/api-docs/**" , "/swagger-ui/**")
                     .permitAll()
                     .anyRequest()
                     .authenticated();
@@ -39,7 +39,7 @@ public class SecurityConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry){
         registry.addMapping("/**")
                 .allowedMethods("*")
-                .allowedMethods("http://localhost:4200");
+                .allowedOrigins("http://localhost:4200");
     }
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
