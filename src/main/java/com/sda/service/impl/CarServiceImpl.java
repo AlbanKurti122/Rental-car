@@ -24,6 +24,7 @@ public class CarServiceImpl implements CarService {
                 ()-> new RuntimeException("Branch not found"));
         Car car = new Car();
         car.setColour(dto.getColour());
+        car.setImage(dto.getImage());
         car.setBrand(dto.getBrand());
         car.setModel(dto.getModel());
         car.setYear(dto.getYear());

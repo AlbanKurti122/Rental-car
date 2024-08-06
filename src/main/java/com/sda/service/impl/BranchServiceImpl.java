@@ -17,8 +17,6 @@ public class BranchServiceImpl implements BranchService {
     private BranchRepository branchRepository;
     @Autowired
     private RentalRepository rentalRepository;
-    private List<Branch> branches;
-    
 
     @Override
     public Branch createBranch(Long rentalId, Branch branch) {

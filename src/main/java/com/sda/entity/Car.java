@@ -14,6 +14,7 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String image;
     private String brand;
     private String model;
     private String bodyType;
@@ -29,5 +30,4 @@ public class Car {
     @OneToMany(mappedBy = "car")
     @JsonIgnore
     private List<Reservation> reservations;
-    private String image;
 }

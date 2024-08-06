@@ -60,6 +60,7 @@ public class ReservationServiceImpl implements ReservationService {
             Loan loan = new Loan();
             loan.setReservation(reservation);
             loan.setEmployee(employee);
+            loan.setDateOfRental(LocalDate.now());
             loan.setComments(dto.getComments());
             loanRepository.save(loan);
             return reservation;

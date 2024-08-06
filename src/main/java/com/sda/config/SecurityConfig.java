@@ -24,7 +24,7 @@ public class SecurityConfig implements WebMvcConfigurer {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.authenticationManager(authenticationManager(http));
         http.authorizeHttpRequests(request ->{
-            request.requestMatchers( "/user/*" ,"/carAvailable", "/v3/api-docs/**" , "/swagger-ui/**")
+            request.requestMatchers( "/user/*" ,"rentals/car/availableCar", "/v3/api-docs/**" , "/swagger-ui/**")
                     .permitAll()
                     .anyRequest()
                     .authenticated();

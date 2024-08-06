@@ -13,4 +13,5 @@ public class CarDto {
     private Integer mileage;
     private Double amountPerDay;
     private Long branchId;
+    private String image;
 }

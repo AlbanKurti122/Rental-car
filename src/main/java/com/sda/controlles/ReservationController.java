@@ -17,11 +17,9 @@ public class ReservationController {
          return reservationService.createReservation(dto);
     }
     @PostMapping("/carAvailable")
-   public Boolean carAvailable(@RequestParam Reservation reservation, @RequestParam LocalDate dateForm, @RequestParam LocalDate dateTo) {
-       if (reservation.getDateFrom().isAfter(dateForm) && reservation.getDateTo().isBefore(dateTo)) {
-           return false;
-       }
-       return true;
+   public Boolean carAvailable(@RequestBody Reservation reservation, @RequestParam LocalDate dateForm, @RequestParam LocalDate dateTo) {
+        return !(reservation.getDateFrom().isBefore(dateForm) &&
+                reservation.getDateTo().isAfter(dateTo));
    }
    @PostMapping("/{id}/closeReservation")
    public Reservation closeReservation(@PathVariable Long id, @RequestBody String comment){
