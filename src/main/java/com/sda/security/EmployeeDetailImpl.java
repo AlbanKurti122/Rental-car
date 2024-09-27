@@ -1,6 +1,4 @@
 package com.sda.security;
-
-import com.sda.entity.Customer;
 import com.sda.entity.Employee;
 import com.sda.static_data.Role;
 import org.springframework.security.core.GrantedAuthority;

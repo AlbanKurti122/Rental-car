@@ -12,6 +12,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
+    @Column(unique = true)
     private String username;
     private Boolean active = true;
     private String password;
