@@ -1,5 +1,6 @@
 package com.sda.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,12 +15,14 @@ public class Branch {
     private Long id;
     private String address;
     private String city;
-    private Boolean active;
+    private Boolean active = true;
     @ManyToOne
     @JoinColumn(name = "rental_id")
     private Rental rental;
-    @OneToMany(mappedBy = "branch", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "branch")
+    @JsonIgnore
     private List<Employee> employees;
-    @OneToMany(mappedBy = "branch", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "branch")
+    @JsonIgnore
     private List<Car>cars;
 }

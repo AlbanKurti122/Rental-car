@@ -1,5 +1,4 @@
 package com.sda.controlles;
-
 import com.sda.entity.Rental;
 import com.sda.repository.RentalRepository;
 import com.sda.service.RentalService;

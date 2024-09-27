@@ -1,5 +1,6 @@
 package com.sda.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.List;
@@ -15,7 +16,8 @@ public class Rental {
     private String contactAddress;
     private String owner;
     private  String logotype;
-    @OneToMany(mappedBy = "rental",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "rental")
+    @JsonIgnore
     private List<Branch>branches;
 
     public Long getId() {

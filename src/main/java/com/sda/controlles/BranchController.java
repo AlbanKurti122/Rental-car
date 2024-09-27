@@ -1,15 +1,12 @@
 package com.sda.controlles;
-
 import com.sda.entity.Branch;
-import com.sda.repository.BranchRepository;
 import com.sda.service.BranchService;
-import com.sda.service.RentalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/rentals")
+@RequestMapping("/rentals")
 public class BranchController {
     @Autowired
     private BranchService branchService;
